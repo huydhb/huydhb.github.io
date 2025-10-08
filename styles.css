@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow: hidden;
+}
+
+/* Lớp container chung để giới hạn chiều rộng nội dung và căn giữa.
+  Được tái sử dụng ở nhiều section.
+*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Thanh định vị (navbar) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+/* Sử dụng Flexbox để căn chỉnh logo và MSSV nằm ở hai phía */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto; /* Giữ đúng tỷ lệ ảnh khi co giãn chiều cao */
+}
+
+.mssv {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Lớp bản tố trên màn hình */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("./images/background2.png") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.8),
+    rgba(60, 60, 60, 0.6)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding-bottom: 250px;
+}
+
+.hero-title {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.quote-container {
+  margin-top: 40px;
+  padding-left: 20px;
+  border-left: 3px solid #606d7a;
+}
+
+.hero-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* KHU VỰC FEATURES */
+.features {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+/* Sử dụng Grid để tạo layout 3 cột đều nhau */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.feature-card {
+  padding: 32px 26px;
+  backdrop-filter: blur(5px); /* Hiệu Ứng kính mỜ */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Dùng Flexbox để icon và tiêu đề nằm trên cùng một hàng */
+.feature-icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.feature-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 10px;
+}
