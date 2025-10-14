@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.ocean-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/DaiDuong.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.crab,
+.diver,
+.shark {
+  position: absolute;
+  object-fit: contain;
+}
+
+/* --- Cua --- */
+.crab {
+  width: 150px;
+  bottom: 50px;
+  left: -50px;
+  animation: moveCrab 20s linear infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes moveCrab {
+  0% {
+    transform: translateX(0);
+  }
+  49% {
+    transform: translateX(calc(100vw - 100px));
+  }
+  50% {
+    transform: translateX(calc(100vw - 100px)) scaleX(-1);
+  }
+  99% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+/* --- Thợ Lặn --- */
+.diver {
+  width: 220px;
+  top: 20%;
+  left: -50px;
+  animation: swimDiver 30s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes swimDiver {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(30vw, 100px) scaleX(1);
+  }
+  40% {
+    transform: translate(60vw, -50px) scaleX(1); /* Đi lên, sang phải */
+  }
+  45% {
+    transform: translate(65vw, -60px) scaleX(-1); /* Gần cuối, quay đầu */
+  }
+  65% {
+    transform: translate(35vw, 50px) scaleX(-1); /* Đi xuống, sang trái */
+  }
+  85% {
+    transform: translate(5vw, -20px) scaleX(-1); /* Đi lên, sang trái */
+  }
+  90% {
+    transform: translate(-10vw, 0px) scaleX(-1); /* Ra khỏi màn hình trái, vẫn quay đầu */
+  }
+  100% {
+    transform: translate(0, 0) scaleX(1); /* Về vị trí ban đầu (từ -150px), quay đầu bình thường */
+  }
+}
+
+/* --- Cá Mập --- */
+.shark {
+  width: 300px;
+  top: 35%;
+  left: -350px;
+  animation: chaseShark 30s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes chaseShark {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(35vw, 120px) scaleX(1);
+  }
+  40% {
+    transform: translate(65vw, -30px) scaleX(1);
+  }
+  45% {
+    transform: translate(70vw, -40px) scaleX(-1);
+  }
+  65% {
+    transform: translate(40vw, 70px) scaleX(-1);
+  }
+  85% {
+    transform: translate(10vw, 0px) scaleX(-1);
+  }
+  90% {
+    transform: translate(-15vw, 20px) scaleX(-1);
+  }
+  100% {
+    transform: translate(0, 0) scaleX(1);
+  }
+}
