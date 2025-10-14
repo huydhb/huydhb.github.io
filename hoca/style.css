@@ -119,3 +119,94 @@ body {
     transform: translate(0, 0) scaleX(1);
   }
 }
+
+/* --- Responsive cho Mobile --- */
+@media (max-width: 768px) {
+  .crab {
+    width: 20vw;
+    animation-duration: 15s;
+  }
+
+  .diver {
+    width: 25vw;
+    animation-duration: 22s;
+  }
+
+  .shark {
+    width: 35vw;
+    left: -40vw;
+    animation-duration: 22s;
+  }
+
+  @keyframes moveCrab {
+    0% {
+      transform: translateX(0);
+    }
+    49% {
+      transform: translateX(calc(100vw - 20vw));
+    }
+    50% {
+      transform: translateX(calc(100vw - 20vw)) scaleX(-1);
+    }
+    99% {
+      transform: translateX(0) scaleX(-1);
+    }
+    100% {
+      transform: translateX(0) scaleX(1);
+    }
+  }
+
+  @keyframes swimDiver {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(30vw, 15vh) scaleX(1);
+    }
+    40% {
+      transform: translate(60vw, -8vh) scaleX(1);
+    }
+    45% {
+      transform: translate(65vw, -10vh) scaleX(-1);
+    }
+    65% {
+      transform: translate(35vw, 8vh) scaleX(-1);
+    }
+    85% {
+      transform: translate(5vw, -5vh) scaleX(-1);
+    }
+    90% {
+      transform: translate(-10vw, 0px) scaleX(-1);
+    }
+    100% {
+      transform: translate(0, 0) scaleX(1);
+    }
+  }
+
+  @keyframes chaseShark {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(35vw, 18vh) scaleX(1);
+    }
+    40% {
+      transform: translate(65vw, -6vh) scaleX(1);
+    }
+    45% {
+      transform: translate(70vw, -8vh) scaleX(-1);
+    }
+    65% {
+      transform: translate(40vw, 10vh) scaleX(-1);
+    }
+    85% {
+      transform: translate(10vw, 0px) scaleX(-1);
+    }
+    90% {
+      transform: translate(-15vw, 3vh) scaleX(-1);
+    }
+    100% {
+      transform: translate(0, 0) scaleX(1);
+    }
+  }
+}
