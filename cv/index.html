@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>CV – Modern Waves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Canvas A4 -->
+    <div class="page">
+      <div class="cv">
+        <!-- ===== LEFT COLUMN ===== -->
+        <aside class="left">
+          <div class="hero">
+            <!-- Waves background (inline SVG) -->
+            <svg
+              class="hero-waves"
+              viewBox="0 0 600 280"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="var(--blue-700)" />
+                  <stop offset="100%" stop-color="var(--blue-500)" />
+                </linearGradient>
+                <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="var(--blue-400)" />
+                  <stop offset="100%" stop-color="var(--blue-300)" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,0 L600,0 L600,80 C520,120 420,120 330,95 C240,70 160,70 0,120 Z"
+                fill="url(#g1)"
+              />
+              <path
+                d="M0,40 C160,90 240,90 330,115 C420,140 520,140 600,100 L600,200 L0,200 Z"
+                fill="url(#g2)"
+                opacity=".95"
+              />
+            </svg>
+
+            <!-- Avatar -->
+            <div class="avatar-ring">
+              <img src="../images/avt.png" alt="Ảnh chân dung" class="avatar" />
+            </div>
+          </div>
+
+          <!-- CONTACT -->
+          <section class="block">
+            <h3>Liên hệ</h3>
+            <ul class="list icon-list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M6.6 10.8c1.3 2.6 3.4 4.8 6 6l2-2c.2-.2.6-.2.9-.1 1 .3 2.1.5 3.2.5.5 0 .9.4.9.9V20c0 .5-.4 1-1 1C10.2 21 3 13.8 3 4c0-.5.4-1 1-1h3c.5 0 .9.4.9.9 0 1.1.2 2.2.5 3.2.1.3 0 .6-.1.9l-1.7 1.8z"
+                  />
+                </svg>
+                +84 123 456 7890
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 4h20v16H2z" fill="none" />
+                  <path d="M22 6v12H2V6l10 6L22 6zM2 6l10 6L22 6" />
+                </svg>
+                baohuy@gmail.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a9 9 0 0 0-9 9c0 6.1 9 11 9 11s9-4.9 9-11a9 9 0 0 0-9-9zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"
+                  />
+                </svg>
+                Ninh Hòa, Khánh Hòa
+              </li>
+            </ul>
+          </section>
+
+          <!-- EDUCATION -->
+          <section class="block">
+            <h3>Quá trình học tập</h3>
+            <div class="edu">
+              <h4>Học sinh</h4>
+              <p>Trường Tiểu Học Ninh Phước</p>
+              <span>2013 – 2018</span>
+            </div>
+            <div class="rule"></div>
+            <div class="edu">
+              <h4>Học sinh</h4>
+              <p>Trường trung học cơ sở Phạm Hồng Thái</p>
+              <span>2018 – 2022</span>
+            </div>
+            <div class="rule"></div>
+            <div class="edu">
+              <h4>Học sinh</h4>
+              <p>Trường Trung Học Phổ Thông Nguyễn Trãi</p>
+              <span>2022 – 2025</span>
+            </div>
+            <div class="rule"></div>
+            <div class="edu">
+              <h4>Sinh viên ngành Công Nghệ Thông Tin</h4>
+              <p>Trường Đại học Sư phạm Thành phố Hồ Chí Minh</p>
+              <span>2025 – Hôm nay</span>
+            </div>
+          </section>
+
+          <!-- EXPERTISE -->
+          <section class="block">
+            <h3>Kỹ năng</h3>
+            <ul class="list">
+              <li>Python</li>
+              <li>HTML & CSS & JS</li>
+              <li>C++ & Free Pascal</li>
+            </ul>
+          </section>
+
+          <!-- bottom waves -->
+          <svg
+            class="footer-waves"
+            viewBox="0 0 600 180"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,60 C120,120 240,120 360,90 C480,60 540,40 600,70 L600,180 L0,180 Z"
+              fill="var(--blue-700)"
+            />
+            <path
+              d="M0,90 C140,130 260,120 380,90 C500,60 530,60 600,80 L600,180 L0,180 Z"
+              fill="var(--blue-500)"
+              opacity=".9"
+            />
+          </svg>
+        </aside>
+
+        <!-- ===== RIGHT COLUMN ===== -->
+        <main class="right">
+          <header class="name">
+            <h1>Đặng Hoàng Bảo Huy</h1>
+            <h2>Kỹ sư trí tuệ nhân tạo</h2>
+            <div class="underline"></div>
+          </header>
+
+          <section class="sec">
+            <h3>Bản thân</h3>
+            <p>
+              Là sinh viên năm nhất ngành Công nghệ thông tin, tôi có kiến thức
+              nền tảng về lập trình (Python, C++) và tư duy giải quyết vấn đề
+              tốt, được rèn luyện trong quá trình tham gia đội tuyển HSG Tin
+              học. Tôi có khả năng tự học và chủ động tìm hiểu công nghệ mới.
+              Với tinh thần trách nhiệm cao thể hiện qua vai trò Lớp trưởng, Lớp
+              phó, tôi mong muốn tìm kiếm môi trường học hỏi và thực tập để phát
+              triển chuyên môn, áp dụng kiến thức vào các dự án công nghệ, đồng
+              thời xây dựng một sự nghiệp bền vững trong ngành CNTT.
+            </p>
+          </section>
+
+          <section class="sec">
+            <h3>Kinh nghiệm làm việc</h3>
+            <article class="job">
+              <h4>Trường TH Ninh Phước</h4>
+              <div class="meta">
+                <span>Lớp trưởng</span>
+                <span>2013 – 2018</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  Tổ chức, điều hành các hoạt động chung của lớp, đảm bảo trật
+                  tự và nề nếp trong các giờ học và sinh hoạt.
+                </li>
+                <li>
+                  Xây dựng tinh thần đoàn kết, hỗ trợ các bạn học yếu hơn trong
+                  học tập, duy trì phong trào thi đua học tốt của lớp.
+                </li>
+              </ul>
+            </article>
+            <article class="job">
+              <h4>Trường THCS Phạm Hồng Thái</h4>
+              <div class="meta">
+                <span>Lớp phó học tập</span>
+                <span>2018 – 2022</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  Lập kế hoạch ôn tập theo tuần/tháng, xây nhóm học theo môn;
+                  soạn đề cương tóm tắt và chia sẻ tài liệu cho lớp
+                  (Drive/Docs).
+                </li>
+                <li>
+                  Theo dõi tiến độ, nhắc deadline bài tập; phối hợp GV tổ chức
+                  chuyên đề và hoạt động “đôi bạn cùng tiến”.
+                </li>
+                <li>
+                  Phân công, tổ chức các nhóm thảo luận, học tập theo chủ đề,
+                  đặc biệt là các môn học khó, nhằm nâng cao kết quả chung của
+                  lớp.
+                </li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h4>Trường THPT Nguyễn Trãi</h4>
+              <div class="meta">
+                <span>Thành viên đội tuyển HSG Tin</span>
+                <span>2022 – 2025</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  Ôn luyện thuật toán (DP, đồ thị, tham lam, cấu trúc dữ liệu)
+                  với C++/Python; viết lời giải có chú thích và chuẩn hóa test.
+                </li>
+                <li>
+                  Tham gia các kỳ thi/đánh giá chọn đội tuyển; hỗ trợ hướng dẫn
+                  đàn em, review code và xây bộ đề luyện tập nội bộ.
+                </li>
+                <li>
+                  Phát triển kỹ năng tư duy logic và giải quyết các bài toán
+                  phức tạp thông qua lập trình, hoàn thành các dự án lập trình
+                  được giao trong đội tuyển.
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="sec">
+            <h3>Giải thưởng</h3>
+            <ul class="bullets">
+              <li>
+                Giải khuyết khích thi Học sinh giỏi cấp tỉnh (bảng B) - Năm học
+                2023
+              </li>
+              <li>
+                Giải ba thi Học sinh giỏi cấp tỉnh (bảng B) - Năm học 2024
+              </li>
+              <li>
+                Giải nhất Stem (Xác lập chủ quyền) cấp trường - Năm học 2024
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

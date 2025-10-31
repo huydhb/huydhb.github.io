@@ -1,0 +1,246 @@
+/* ==== THEME ==== */
+:root {
+  --blue-700: #153e7a;
+  --blue-600: #1d529d;
+  --blue-500: #2b6bbf;
+  --blue-400: #3d88d1;
+  --blue-300: #6fb0ea;
+  --ink: #0c1531;
+  --muted: #5e6a7a;
+  --line: #c8d4e7;
+  --paper: #ffffff;
+}
+
+/* ==== PAGE (A4) ==== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #f2f5fb;
+  color: var(--ink);
+  font: 14px/1.5 "Inter", "Segoe UI", Roboto, Arial, system-ui, sans-serif;
+}
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 18px auto;
+  background: var(--paper);
+  box-shadow: 0 10px 35px rgba(12, 21, 49, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle line pattern like sample */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+      75deg,
+      rgba(12, 21, 49, 0.03) 0 2px,
+      transparent 2px 8px
+    ),
+    repeating-linear-gradient(
+      -75deg,
+      rgba(12, 21, 49, 0.025) 0 2px,
+      transparent 2px 8px
+    );
+  pointer-events: none;
+}
+
+/* ==== LAYOUT ==== */
+.cv {
+  display: grid;
+  grid-template-columns: 34% 1fr; /* left / right width */
+  min-height: 297mm;
+}
+.left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 22px 18px;
+  background: linear-gradient(180deg, #eef3fb 0%, #e6eef9 100%);
+  overflow: hidden;
+}
+.right {
+  padding: 28px 34px 34px 30px;
+  background: var(--paper);
+  position: relative;
+  border-left: 4px solid var(--blue-600);
+}
+
+/* ==== HERO LEFT ==== */
+.hero {
+  position: relative;
+  height: 210px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.avatar-ring {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -35px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #fff 0 20%,
+    #e7effa 20% 100%
+  );
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(12, 21, 49, 0.15);
+}
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid #fff;
+}
+
+/* bottom waves on left */
+.footer-waves {
+  width: 100%;
+  height: 120px;
+  margin-top: auto;
+}
+
+/* ==== LEFT CONTENT BLOCKS ==== */
+.block {
+  margin: 20px 4px 8px;
+}
+.block h3 {
+  color: var(--blue-700);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin: 20px 0 10px;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li {
+  margin: 6px 0;
+  color: var(--ink);
+}
+.icon-list li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.icon-list svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--blue-600);
+}
+
+.edu {
+  margin: 8px 0 14px;
+}
+.edu h4 {
+  margin: 0;
+  font-weight: 700;
+}
+.edu p {
+  margin: 2px 0;
+  color: var(--muted);
+}
+.edu span {
+  color: var(--ink);
+  font-weight: 600;
+}
+.rule {
+  height: 2px;
+  background: linear-gradient(90deg, var(--line), transparent);
+  margin: 14px 0;
+}
+
+/* ==== RIGHT HEADER ==== */
+.name h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  margin: 10px 0 2px;
+  color: var(--blue-700);
+  letter-spacing: 0.4px;
+}
+.name h2 {
+  font-weight: 600;
+  margin: 0;
+  color: #2f4f88;
+  letter-spacing: 2px;
+}
+.underline {
+  height: 3px;
+  width: 120px;
+  background: var(--blue-500);
+  margin: 12px 0 18px;
+}
+
+/* ==== RIGHT SECTIONS ==== */
+.sec {
+  margin: 10px 0 18px;
+}
+.sec h3 {
+  font-size: 20px;
+  color: var(--blue-700);
+  margin: 6px 0 8px;
+}
+.sec p {
+  color: #2a3350;
+}
+
+.job {
+  margin: 12px 0 14px;
+}
+.job h4 {
+  margin: 0;
+  font-size: 17px;
+  color: var(--blue-700);
+}
+.job .meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  margin: 2px 0 8px;
+}
+.bullets {
+  margin: 0;
+  padding-left: 18px;
+}
+.bullets li {
+  margin: 6px 0;
+}
+
+/* ==== PRINT ==== */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  body {
+    background: #fff;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+  }
+  .page::before {
+    display: none;
+  }
+}
