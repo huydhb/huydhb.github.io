@@ -1,10 +1,12 @@
+// =============================
+// HIỂN THỊ TRÍCH DẪN NGẪU NHIÊN
+// - quotes: dữ liệu câu nói
+// - Khi DOM sẵn sàng, chọn 1 câu và gán vào #quote-text, #quote-author
+// =============================
 document.addEventListener("DOMContentLoaded", function () {
-  // --- NƠI LƯU TRỮ CÁC CÂU NÓI ---
+  // --- DỮ LIỆU CÁC CÂU NÓI ---
   const quotes = [
-    {
-      text: "Học, học nữa, học mãi.",
-      author: "V.I. Lenin",
-    },
+    { text: "Học, học nữa, học mãi.", author: "V.I. Lenin" },
     {
       text: "Đầu tư vào tri thức mang lại lợi nhuận cao nhất.",
       author: "Benjamin Franklin",
@@ -27,13 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // --- LOGIC HIỂN THỊ CÂU NÓI NGẪU NHIÊN ---
+  // --- LẤY PHẦN TỬ DOM ---
   const quoteTextElement = document.getElementById("quote-text");
   const quoteAuthorElement = document.getElementById("quote-author");
 
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
+  // Nếu thiếu phần tử thì bỏ qua (tránh lỗi)
+  if (!quoteTextElement || !quoteAuthorElement || quotes.length === 0) return;
 
+  // --- CHỌN NGẪU NHIÊN VÀ GÁN NỘI DUNG ---
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   quoteTextElement.innerHTML = `<em>"${randomQuote.text}"</em>`;
   quoteAuthorElement.textContent = `- ${randomQuote.author}`;
 });

@@ -5,10 +5,10 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  overflow: hidden;
 }
 
 /* Lớp container chung để giới hạn chiều rộng nội dung và căn giữa.
@@ -81,15 +81,16 @@ body {
 }
 
 .hero-title {
-  font-size: 58px;
+  font-size: clamp(28px, 6vw, 58px);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 25px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-wrap: balance;
 }
 
 .hero-description {
-  font-size: 16px;
+  font-size: clamp(14px, 2.8vw, 16px);
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -109,6 +110,12 @@ body {
 .quote-author {
   font-size: 1rem;
   text-align: right;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* KHU VỰC FEATURES */
@@ -158,4 +165,59 @@ body {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   padding-top: 10px;
+}
+
+/* Thu nhỏ chữ & siết spacing cho màn 1024x600 và các màn thấp */
+@media (max-width: 1024px) and (max-height: 700px) {
+  .hero {
+    height: 100vh;
+    padding-top: 96px;
+    align-items: flex-start; /* <-- THÊM DÒNG NÀY */
+  }
+
+  .hero-title {
+    font-size: min(4.6vw, 7.2vh, 40px);
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    margin-bottom: 12px;
+  }
+  .hero-description {
+    font-size: min(2vw, 2.8vh, 14px);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .hero-content {
+    padding-bottom: clamp(300px, 52vh, 520px);
+  }
+
+  .features {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 16px 0;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .feature-card {
+    padding: 20px 18px;
+  }
+  .feature-title {
+    font-size: 17px;
+  }
+  .feature-description {
+    font-size: 13px;
+  }
+
+  .hero blockquote,
+  .hero .quote,
+  .hero .quote-wrap,
+  .hero .quote-container {
+    margin-top: clamp(40px, 6vh, 48px);
+  }
 }
