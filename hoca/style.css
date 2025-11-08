@@ -1,35 +1,39 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   overflow: hidden;
-  background-color: #000;
+  background: #000;
 }
 
 .ocean-container {
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/DaiDuong.jpeg");
-  background-size: cover;
-  background-position: center;
   position: relative;
   overflow: hidden;
+  background: url("../images/DaiDuong.jpeg") center / cover no-repeat;
 }
 
+/* Shared sprite rules */
 .crab,
 .diver,
-.shark {
+.shark,
+.danca {
   position: absolute;
   object-fit: contain;
+  transform-origin: center;
+  pointer-events: none;
 }
 
-/* --- Cua --- */
+/* Crab */
 .crab {
   width: 150px;
   bottom: 50px;
   left: -50px;
   animation: moveCrab 20s linear infinite alternate;
-  transform-origin: center;
 }
-
 @keyframes moveCrab {
   0% {
     transform: translateX(0);
@@ -48,15 +52,13 @@ body {
   }
 }
 
-/* --- Thợ Lặn --- */
+/* Diver */
 .diver {
   width: 220px;
   top: 20%;
   left: -50px;
   animation: swimDiver 30s ease-in-out infinite;
-  transform-origin: center;
 }
-
 @keyframes swimDiver {
   0% {
     transform: translate(0, 0);
@@ -65,34 +67,32 @@ body {
     transform: translate(30vw, 100px) scaleX(1);
   }
   40% {
-    transform: translate(60vw, -50px) scaleX(1); /* Đi lên, sang phải */
+    transform: translate(60vw, -50px) scaleX(1);
   }
   45% {
-    transform: translate(65vw, -60px) scaleX(-1); /* Gần cuối, quay đầu */
+    transform: translate(65vw, -60px) scaleX(-1);
   }
   65% {
-    transform: translate(35vw, 50px) scaleX(-1); /* Đi xuống, sang trái */
+    transform: translate(35vw, 50px) scaleX(-1);
   }
   85% {
-    transform: translate(5vw, -20px) scaleX(-1); /* Đi lên, sang trái */
+    transform: translate(5vw, -20px) scaleX(-1);
   }
   90% {
-    transform: translate(-10vw, 0px) scaleX(-1); /* Ra khỏi màn hình trái, vẫn quay đầu */
+    transform: translate(-10vw, 0) scaleX(-1);
   }
   100% {
-    transform: translate(0, 0) scaleX(1); /* Về vị trí ban đầu (từ -150px), quay đầu bình thường */
+    transform: translate(0, 0) scaleX(1);
   }
 }
 
-/* --- Cá Mập --- */
+/* Shark */
 .shark {
   width: 300px;
   top: 35%;
   left: -350px;
   animation: chaseShark 30s ease-in-out infinite;
-  transform-origin: center;
 }
-
 @keyframes chaseShark {
   0% {
     transform: translate(0, 0);
@@ -110,7 +110,7 @@ body {
     transform: translate(40vw, 70px) scaleX(-1);
   }
   85% {
-    transform: translate(10vw, 0px) scaleX(-1);
+    transform: translate(10vw, 0) scaleX(-1);
   }
   90% {
     transform: translate(-15vw, 20px) scaleX(-1);
@@ -120,18 +120,80 @@ body {
   }
 }
 
-/* --- Responsive cho Mobile --- */
+/* DanCa (own path) */
+.danca {
+  width: 260px;
+  top: 60%;
+  left: -320px;
+  z-index: 2;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+  animation: swimDanca 20s ease-in-out infinite 3s;
+}
+@keyframes swimDanca {
+  0% {
+    left: -320px;
+    top: 60%;
+    transform: scaleX(1) rotate(0) translateY(-6px);
+  }
+  20% {
+    left: 25vw;
+    top: 57%;
+    transform: scaleX(1) rotate(2deg) translateY(0);
+  }
+  40% {
+    left: calc(100% + 280px);
+    top: 62%;
+    transform: scaleX(1) rotate(-1deg) translateY(8px);
+  }
+  41% {
+    left: calc(100% + 280px);
+    top: 62%;
+    transform: scaleX(-1) rotate(0) translateY(8px);
+  }
+  60% {
+    left: 55vw;
+    top: 56%;
+    transform: scaleX(-1) rotate(1deg) translateY(-4px);
+  }
+  80% {
+    left: -8vw;
+    top: 59%;
+    transform: scaleX(-1) rotate(-2deg) translateY(3px);
+  }
+  99% {
+    left: -320px;
+    top: 60%;
+    transform: scaleX(-1) rotate(0) translateY(-2px);
+  }
+  100% {
+    left: -320px;
+    top: 60%;
+    transform: scaleX(1) rotate(0) translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 20% -10%, -15% 8%, 30% -20%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 60% -40%;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .crab {
     width: 20vw;
     animation-duration: 15s;
   }
-
   .diver {
     width: 25vw;
     animation-duration: 22s;
   }
-
   .shark {
     width: 35vw;
     left: -40vw;
@@ -155,7 +217,6 @@ body {
       transform: translateX(0) scaleX(1);
     }
   }
-
   @keyframes swimDiver {
     0% {
       transform: translate(0, 0);
@@ -176,13 +237,12 @@ body {
       transform: translate(5vw, -5vh) scaleX(-1);
     }
     90% {
-      transform: translate(-10vw, 0px) scaleX(-1);
+      transform: translate(-10vw, 0) scaleX(-1);
     }
     100% {
       transform: translate(0, 0) scaleX(1);
     }
   }
-
   @keyframes chaseShark {
     0% {
       transform: translate(0, 0);
@@ -200,7 +260,7 @@ body {
       transform: translate(40vw, 10vh) scaleX(-1);
     }
     85% {
-      transform: translate(10vw, 0px) scaleX(-1);
+      transform: translate(10vw, 0) scaleX(-1);
     }
     90% {
       transform: translate(-15vw, 3vh) scaleX(-1);
@@ -208,5 +268,59 @@ body {
     100% {
       transform: translate(0, 0) scaleX(1);
     }
+  }
+
+  .danca {
+    width: 34vw;
+    top: 63%;
+    left: -40vw;
+    animation-duration: 22s;
+    animation-delay: 4s;
+  }
+  @keyframes swimDanca {
+    0% {
+      left: -40vw;
+      top: 63%;
+      transform: scaleX(1) translateY(-4px);
+    }
+    35% {
+      left: 96vw;
+      top: 60%;
+      transform: scaleX(1) translateY(6px);
+    }
+    36% {
+      left: 96vw;
+      top: 60%;
+      transform: scaleX(-1) translateY(6px);
+    }
+    70% {
+      left: -12vw;
+      top: 58%;
+      transform: scaleX(-1) translateY(-3px);
+    }
+    99% {
+      left: -40vw;
+      top: 63%;
+      transform: scaleX(-1) translateY(0);
+    }
+    100% {
+      left: -40vw;
+      top: 63%;
+      transform: scaleX(1) translateY(0);
+    }
+  }
+
+  .caustics {
+    opacity: 0.22;
+  }
+  .bubble-emitter {
+    width: 28vw;
+    height: 60vh;
+  }
+  .bubble-emitter.left {
+    left: 4vw;
+  }
+  .bubble-emitter.right {
+    right: 5vw;
   }
 }
