@@ -31,7 +31,7 @@ body {
 
 /* 🦀 Cua */
 .crab {
-  width: 250px;
+  width: 150px;
   bottom: 50px;
   left: -50px;
   animation: moveCrab 10s linear infinite alternate;
@@ -56,7 +56,7 @@ body {
 
 /* 🤿 Thợ lặn */
 .diver {
-  width: 320px;
+  width: 220px;
   top: 20%;
   left: -50px;
   animation: swimDiver 15s ease-in-out infinite;
@@ -96,7 +96,7 @@ body {
 
 /* 🦈 Cá mập */
 .shark {
-  width: 350px;
+  width: 250px;
   top: 35%;
   left: -350px;
   animation: chaseShark 15s ease-in-out infinite;
@@ -142,10 +142,10 @@ body {
 
 /* 🐠 Đàn cá 1 */
 .danca1 {
-  width: 250px;
+  width: 180px;
   top: 60%;
   z-index: 2;
-  animation: swimDanca1 10s ease-in-out infinite 1s;
+  animation: swimDanca1 10s ease-in-out infinite;
 }
 
 @keyframes swimDanca1 {
@@ -173,11 +173,11 @@ body {
 
 /* 🐟 Đàn cá 2 (bơi chéo xuống) */
 .danca2 {
-  width: 200px;
+  width: 150px;
   top: 10%;
   left: 0%;
   z-index: 2;
-  animation: swimDanca2 8s ease-in-out infinite 1s;
+  animation: swimDanca2 8s ease-in-out infinite;
 }
 @keyframes swimDanca2 {
   0% {
@@ -199,11 +199,11 @@ body {
 
 /* 🐡 Đàn cá 3 (bơi chéo ngược lại) */
 .danca3 {
-  width: 280px;
+  width: 180px;
   top: 10%;
   right: 0;
   z-index: 2;
-  animation: swimDanca3 6s ease-in-out infinite 1s;
+  animation: swimDanca3 6s ease-in-out infinite;
 }
 
 @keyframes swimDanca3 {
@@ -227,7 +227,7 @@ body {
 /* ====================== RONG BIỂN ====================== */
 .seaweed-container {
   position: absolute;
-  bottom: -40px;
+  bottom: -20px;
   left: 0;
   width: 100%;
   display: flex;
@@ -238,7 +238,7 @@ body {
   z-index: 1;
 }
 .seaweed {
-  width: 300px;
+  width: 200px;
   opacity: 0.9;
   animation: sway 2.5s ease-in-out infinite alternate;
 }
@@ -266,7 +266,7 @@ body {
 .bubble {
   position: absolute;
   bottom: 0;
-  width: 70px;
+  width: 50px;
   opacity: 0.8;
   animation: rise 6s ease-in infinite;
 }
