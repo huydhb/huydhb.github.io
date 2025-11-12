@@ -1,4 +1,4 @@
-/* Base */
+/* ====================== CƠ BẢN ====================== */
 * {
   box-sizing: border-box;
 }
@@ -7,32 +7,34 @@ body {
   overflow: hidden;
   background: #000;
 }
-
 .ocean-container {
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: url("../images/DaiDuong.jpeg") center / cover no-repeat;
+  background: url("../images/DaiDuong.jpg") center / cover no-repeat;
 }
 
-/* Shared sprite rules */
+/* ====================== NHÂN VẬT ====================== */
 .crab,
 .diver,
 .shark,
-.danca {
+.danca1,
+.danca2,
+.danca3 {
   position: absolute;
   object-fit: contain;
   transform-origin: center;
   pointer-events: none;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
 }
 
-/* Crab */
+/* 🦀 Cua */
 .crab {
-  width: 150px;
+  width: 250px;
   bottom: 50px;
   left: -50px;
-  animation: moveCrab 20s linear infinite alternate;
+  animation: moveCrab 10s linear infinite alternate;
 }
 @keyframes moveCrab {
   0% {
@@ -52,25 +54,31 @@ body {
   }
 }
 
-/* Diver */
+/* 🤿 Thợ lặn */
 .diver {
-  width: 220px;
+  width: 320px;
   top: 20%;
   left: -50px;
-  animation: swimDiver 30s ease-in-out infinite;
+  animation: swimDiver 15s ease-in-out infinite;
 }
 @keyframes swimDiver {
   0% {
     transform: translate(0, 0);
   }
+  10% {
+    transform: translate(20vw, 70px) scaleX(1);
+  }
   20% {
-    transform: translate(30vw, 100px) scaleX(1);
+    transform: translate(25vw, 5px) scaleX(1);
+  }
+  30% {
+    transform: translate(65vw, 350px) scaleX(1);
   }
   40% {
-    transform: translate(60vw, -50px) scaleX(1);
+    transform: translate(85vw, -50px) scaleX(1);
   }
   45% {
-    transform: translate(65vw, -60px) scaleX(-1);
+    transform: translate(85vw, -60px) scaleX(-1);
   }
   65% {
     transform: translate(35vw, 50px) scaleX(-1);
@@ -86,241 +94,220 @@ body {
   }
 }
 
-/* Shark */
+/* 🦈 Cá mập */
 .shark {
-  width: 300px;
+  width: 350px;
   top: 35%;
   left: -350px;
-  animation: chaseShark 30s ease-in-out infinite;
+  animation: chaseShark 15s ease-in-out infinite;
 }
 @keyframes chaseShark {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scaleX(1);
+  }
+  10% {
+    transform: translate(15vw, 40px) scaleX(1);
   }
   20% {
     transform: translate(35vw, 120px) scaleX(1);
   }
+  30% {
+    transform: translate(55vw, 80px) rotate(3deg) scaleX(1);
+  }
   40% {
-    transform: translate(65vw, -30px) scaleX(1);
+    transform: translate(80vw, -30px) rotate(-3deg) scaleX(1);
   }
   45% {
-    transform: translate(70vw, -40px) scaleX(-1);
+    transform: translate(85vw, -40px) scaleX(-1);
+  }
+  55% {
+    transform: translate(60vw, 60px) rotate(3deg) scaleX(-1);
   }
   65% {
-    transform: translate(40vw, 70px) scaleX(-1);
+    transform: translate(40vw, 100px) rotate(-3deg) scaleX(-1);
+  }
+  75% {
+    transform: translate(25vw, 20px) scaleX(-1);
   }
   85% {
-    transform: translate(10vw, 0) scaleX(-1);
+    transform: translate(10vw, -10px) rotate(2deg) scaleX(-1);
   }
   90% {
-    transform: translate(-15vw, 20px) scaleX(-1);
+    transform: translate(-10vw, 20px) scaleX(-1);
   }
   100% {
     transform: translate(0, 0) scaleX(1);
   }
 }
 
-/* DanCa (own path) */
-.danca {
-  width: 260px;
+/* 🐠 Đàn cá 1 */
+.danca1 {
+  width: 250px;
   top: 60%;
-  left: -320px;
   z-index: 2;
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
-  animation: swimDanca 20s ease-in-out infinite 3s;
-}
-@keyframes swimDanca {
-  0% {
-    left: -320px;
-    top: 60%;
-    transform: scaleX(1) rotate(0) translateY(-6px);
-  }
-  20% {
-    left: 25vw;
-    top: 57%;
-    transform: scaleX(1) rotate(2deg) translateY(0);
-  }
-  40% {
-    left: calc(100% + 280px);
-    top: 62%;
-    transform: scaleX(1) rotate(-1deg) translateY(8px);
-  }
-  41% {
-    left: calc(100% + 280px);
-    top: 62%;
-    transform: scaleX(-1) rotate(0) translateY(8px);
-  }
-  60% {
-    left: 55vw;
-    top: 56%;
-    transform: scaleX(-1) rotate(1deg) translateY(-4px);
-  }
-  80% {
-    left: -8vw;
-    top: 59%;
-    transform: scaleX(-1) rotate(-2deg) translateY(3px);
-  }
-  99% {
-    left: -320px;
-    top: 60%;
-    transform: scaleX(-1) rotate(0) translateY(-2px);
-  }
-  100% {
-    left: -320px;
-    top: 60%;
-    transform: scaleX(1) rotate(0) translateY(0);
-  }
+  animation: swimDanca1 10s ease-in-out infinite 1s;
 }
 
-@keyframes shimmer {
+@keyframes swimDanca1 {
   0% {
-    background-position: 0% 0%, 0% 0%, 0% 0%;
+    left: 0%;
+    transform: scaleX(1);
+  }
+  49% {
+    left: calc(100% - 350px);
+    transform: scaleX(1);
   }
   50% {
-    background-position: 20% -10%, -15% 8%, 30% -20%;
+    left: calc(100% - 350px);
+    transform: scaleX(-1);
+  }
+  99% {
+    left: 0%;
+    transform: scaleX(-1);
   }
   100% {
-    background-position: 0% 0%, 0% 0%, 60% -40%;
+    left: 0%;
+    transform: scaleX(1);
   }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .crab {
-    width: 20vw;
-    animation-duration: 15s;
+/* 🐟 Đàn cá 2 (bơi chéo xuống) */
+.danca2 {
+  width: 200px;
+  top: 10%;
+  left: 0%;
+  z-index: 2;
+  animation: swimDanca2 8s ease-in-out infinite 1s;
+}
+@keyframes swimDanca2 {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
   }
-  .diver {
-    width: 25vw;
-    animation-duration: 22s;
+  49% {
+    transform: translate(75vw, 70vh) rotate(-5deg) scaleX(-1);
   }
-  .shark {
-    width: 35vw;
-    left: -40vw;
-    animation-duration: 22s;
+  50% {
+    transform: translate(75vw, 70vh) scaleX(1);
   }
+  99% {
+    transform: translate(0, 0) rotate(-4deg) scaleX(1);
+  }
+  100% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+}
 
-  @keyframes moveCrab {
-    0% {
-      transform: translateX(0);
-    }
-    49% {
-      transform: translateX(calc(100vw - 20vw));
-    }
-    50% {
-      transform: translateX(calc(100vw - 20vw)) scaleX(-1);
-    }
-    99% {
-      transform: translateX(0) scaleX(-1);
-    }
-    100% {
-      transform: translateX(0) scaleX(1);
-    }
-  }
-  @keyframes swimDiver {
-    0% {
-      transform: translate(0, 0);
-    }
-    20% {
-      transform: translate(30vw, 15vh) scaleX(1);
-    }
-    40% {
-      transform: translate(60vw, -8vh) scaleX(1);
-    }
-    45% {
-      transform: translate(65vw, -10vh) scaleX(-1);
-    }
-    65% {
-      transform: translate(35vw, 8vh) scaleX(-1);
-    }
-    85% {
-      transform: translate(5vw, -5vh) scaleX(-1);
-    }
-    90% {
-      transform: translate(-10vw, 0) scaleX(-1);
-    }
-    100% {
-      transform: translate(0, 0) scaleX(1);
-    }
-  }
-  @keyframes chaseShark {
-    0% {
-      transform: translate(0, 0);
-    }
-    20% {
-      transform: translate(35vw, 18vh) scaleX(1);
-    }
-    40% {
-      transform: translate(65vw, -6vh) scaleX(1);
-    }
-    45% {
-      transform: translate(70vw, -8vh) scaleX(-1);
-    }
-    65% {
-      transform: translate(40vw, 10vh) scaleX(-1);
-    }
-    85% {
-      transform: translate(10vw, 0) scaleX(-1);
-    }
-    90% {
-      transform: translate(-15vw, 3vh) scaleX(-1);
-    }
-    100% {
-      transform: translate(0, 0) scaleX(1);
-    }
-  }
+/* 🐡 Đàn cá 3 (bơi chéo ngược lại) */
+.danca3 {
+  width: 280px;
+  top: 10%;
+  right: 0;
+  z-index: 2;
+  animation: swimDanca3 6s ease-in-out infinite 1s;
+}
 
-  .danca {
-    width: 34vw;
-    top: 63%;
-    left: -40vw;
-    animation-duration: 22s;
-    animation-delay: 4s;
+@keyframes swimDanca3 {
+  0% {
+    transform: translate(0, 0) scaleX(1);
   }
-  @keyframes swimDanca {
-    0% {
-      left: -40vw;
-      top: 63%;
-      transform: scaleX(1) translateY(-4px);
-    }
-    35% {
-      left: 96vw;
-      top: 60%;
-      transform: scaleX(1) translateY(6px);
-    }
-    36% {
-      left: 96vw;
-      top: 60%;
-      transform: scaleX(-1) translateY(6px);
-    }
-    70% {
-      left: -12vw;
-      top: 58%;
-      transform: scaleX(-1) translateY(-3px);
-    }
-    99% {
-      left: -40vw;
-      top: 63%;
-      transform: scaleX(-1) translateY(0);
-    }
-    100% {
-      left: -40vw;
-      top: 63%;
-      transform: scaleX(1) translateY(0);
-    }
+  49% {
+    transform: translate(-85vw, 60vh) rotate(2deg) scaleX(1);
   }
+  50% {
+    transform: translate(-85vw, 60vh) scaleX(-1);
+  }
+  99% {
+    transform: translate(0, 0) rotate(2deg) scaleX(-1);
+  }
+  100% {
+    transform: translate(0, 0) scaleX(1);
+  }
+}
 
-  .caustics {
-    opacity: 0.22;
+/* ====================== RONG BIỂN ====================== */
+.seaweed-container {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 180px;
+  pointer-events: none;
+  z-index: 1;
+}
+.seaweed {
+  width: 300px;
+  opacity: 0.9;
+  animation: sway 2.5s ease-in-out infinite alternate;
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
   }
-  .bubble-emitter {
-    width: 28vw;
-    height: 60vh;
+  50% {
+    transform: rotate(3deg);
   }
-  .bubble-emitter.left {
-    left: 4vw;
+}
+
+/* ====================== BONG BÓNG ====================== */
+.bubble-container {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  opacity: 0.8;
+  animation: rise 6s ease-in infinite;
+}
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
   }
-  .bubble-emitter.right {
-    right: 5vw;
+  100% {
+    transform: translateY(-100vh) scale(1.3);
+    opacity: 0;
   }
+}
+/* Vị trí & thời gian ngẫu nhiên */
+.bubble:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+.bubble:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+  animation-duration: 8s;
+}
+.bubble:nth-child(3) {
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 6.5s;
+}
+.bubble:nth-child(4) {
+  left: 55%;
+  animation-delay: 3s;
+  animation-duration: 7.5s;
+}
+.bubble:nth-child(5) {
+  left: 70%;
+  animation-delay: 1.5s;
+  animation-duration: 8s;
+}
+.bubble:nth-child(6) {
+  left: 85%;
+  animation-delay: 0.5s;
+  animation-duration: 7s;
 }
