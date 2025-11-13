@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Canvas A4 -->
+    <!-- Trang A4 -->
     <div class="page">
       <div class="cv">
-        <!-- ===== LEFT COLUMN ===== -->
+        <!-- Cột trái -->
         <aside class="left">
           <div class="hero">
-            <!-- Waves background (inline SVG) -->
+            <!-- Wave nền trên + avatar -->
             <svg
               class="hero-waves"
               viewBox="0 0 600 280"
@@ -41,63 +41,109 @@
               />
             </svg>
 
-            <!-- Avatar -->
             <div class="avatar-ring">
               <img src="../images/avt.png" alt="Ảnh chân dung" class="avatar" />
             </div>
           </div>
 
-          <!-- CONTACT -->
+          <!-- Liên hệ -->
           <section class="block">
             <h3>Liên hệ</h3>
+
             <ul class="list icon-list">
               <li>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M6.6 10.8c1.3 2.6 3.4 4.8 6 6l2-2c.2-.2.6-.2.9-.1 1 .3 2.1.5 3.2.5.5 0 .9.4.9.9V20c0 .5-.4 1-1 1C10.2 21 3 13.8 3 4c0-.5.4-1 1-1h3c.5 0 .9.4.9.9 0 1.1.2 2.2.5 3.2.1.3 0 .6-.1.9l-1.7 1.8z"
-                  />
-                </svg>
-                +84 123 456 7890
+                <img
+                  src="../images/telephone.png"
+                  width="20"
+                  height="20"
+                  alt="phone icon"
+                />
+                +84372768928
               </li>
               <li>
-                <svg viewBox="0 0 24 24">
-                  <path d="M2 4h20v16H2z" fill="none" />
-                  <path d="M22 6v12H2V6l10 6L22 6zM2 6l10 6L22 6" />
-                </svg>
+                <img
+                  src="../images/mail.png"
+                  width="20"
+                  height="20"
+                  alt="mail icon"
+                />
                 baohuy@gmail.com
               </li>
               <li>
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2a9 9 0 0 0-9 9c0 6.1 9 11 9 11s9-4.9 9-11a9 9 0 0 0-9-9zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"
-                  />
-                </svg>
+                <img
+                  src="../images/location.png"
+                  width="20"
+                  height="20"
+                  alt="location icon"
+                />
                 Ninh Hòa, Khánh Hòa
               </li>
             </ul>
+
+            <div class="contact-row">
+              <a
+                href="https://www.facebook.com/danghoangbaohuy.milo"
+                id="fb"
+                class="contact contact--fb"
+              >
+                <img
+                  src="../images/facebook.png"
+                  alt="Facebook"
+                  class="contact-icon"
+                />
+                <span class="contact-label"><b>Facebook</b></span>
+              </a>
+
+              <a
+                href="https://zalo.me/0372768928"
+                id="zl"
+                class="contact contact--zl"
+              >
+                <img
+                  src="../images/zalo.png"
+                  alt="Zalo"
+                  class="contact-icon contact-icon--zl"
+                />
+                <span class="contact-label"><b>Zalo</b></span>
+              </a>
+
+              <a
+                href="https://github.com/huydhb"
+                id="gh"
+                class="contact contact--gh"
+              >
+                <img
+                  src="../images/github.png"
+                  alt="GitHub"
+                  class="contact-icon contact-icon--gh"
+                />
+                <span class="contact-label"><b>GitHub</b></span>
+              </a>
+            </div>
           </section>
 
-          <!-- EDUCATION -->
+          <!-- Học tập -->
           <section class="block">
             <h3>Quá trình học tập</h3>
+
             <div class="edu">
-              <h4>Học sinh</h4>
               <p>Trường Tiểu Học Ninh Phước</p>
               <span>2013 – 2018</span>
             </div>
             <div class="rule"></div>
+
             <div class="edu">
-              <h4>Học sinh</h4>
               <p>Trường trung học cơ sở Phạm Hồng Thái</p>
               <span>2018 – 2022</span>
             </div>
             <div class="rule"></div>
+
             <div class="edu">
-              <h4>Học sinh</h4>
               <p>Trường Trung Học Phổ Thông Nguyễn Trãi</p>
               <span>2022 – 2025</span>
             </div>
             <div class="rule"></div>
+
             <div class="edu">
               <h4>Sinh viên ngành Công Nghệ Thông Tin</h4>
               <p>Trường Đại học Sư phạm Thành phố Hồ Chí Minh</p>
@@ -105,59 +151,60 @@
             </div>
           </section>
 
-          <!-- EXPERTISE -->
+          <!-- Kỹ năng -->
           <section class="block">
             <h3>Kỹ năng</h3>
-            <ul class="list">
-              <li>Python</li>
-              <li>HTML & CSS & JS</li>
-              <li>C++ & Pascal</li>
-            </ul>
-          </section>
 
-          <!-- bottom waves -->
-          <svg
-            class="footer-waves"
-            viewBox="0 0 600 180"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M0,60 C120,120 240,120 360,90 C480,60 540,40 600,70 L600,180 L0,180 Z"
-              fill="var(--blue-700)"
-            />
-            <path
-              d="M0,90 C140,130 260,120 380,90 C500,60 530,60 600,80 L600,180 L0,180 Z"
-              fill="var(--blue-500)"
-              opacity=".9"
-            />
-          </svg>
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-label">Python</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--level: 60%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span class="skill-label">HTML &amp; CSS &amp; JS</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--level: 40%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span class="skill-label">C++</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--level: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </section>
         </aside>
 
-        <!-- ===== RIGHT COLUMN ===== -->
+        <!-- Cột phải -->
         <main class="right">
           <header class="name">
             <h1>Đặng Hoàng Bảo Huy</h1>
-            <h2>AI Engineer</h2>
+            <h2>Kỹ sư Trí tuệ nhân tạo</h2>
             <div class="underline"></div>
           </header>
 
           <section class="sec">
             <h3>Bản thân</h3>
             <p>
-              Là sinh viên năm nhất ngành Công nghệ thông tin, tôi có kiến thức
-              nền tảng về lập trình (Python, C++) và tư duy giải quyết vấn đề
-              tốt, được rèn luyện trong quá trình tham gia đội tuyển HSG Tin
-              học. Tôi có khả năng tự học và chủ động tìm hiểu công nghệ mới.
-              Với tinh thần trách nhiệm cao thể hiện qua vai trò Lớp trưởng, Lớp
-              phó, tôi mong muốn tìm kiếm môi trường học hỏi và thực tập để phát
-              triển chuyên môn, áp dụng kiến thức vào các dự án công nghệ, đồng
-              thời xây dựng một sự nghiệp bền vững trong ngành CNTT.
+              Là sinh viên năm nhất ngành Công nghệ thông tin, tôi sở hữu nền
+              tảng vững về Python, C++ và tư duy thuật toán được rèn luyện qua
+              đội tuyển HSG Tin học. Tôi có khả năng tự học, chủ động khám phá
+              công nghệ mới và tinh thần trách nhiệm cao trong vai trò cán sự
+              lớp. Tôi mong muốn tìm kiếm môi trường thực tập để phát triển
+              chuyên môn, tham gia các dự án thực tế và xây dựng nền tảng sự
+              nghiệp vững chắc trong lĩnh vực CNTT.
             </p>
           </section>
 
+          <!-- Kinh nghiệm làm việc -->
           <section class="sec">
             <h3>Kinh nghiệm làm việc</h3>
+
             <article class="job">
               <h4>Trường TH Ninh Phước</h4>
               <div class="meta">
@@ -175,6 +222,7 @@
                 </li>
               </ul>
             </article>
+
             <article class="job">
               <h4>Trường THCS Phạm Hồng Thái</h4>
               <div class="meta">
@@ -191,11 +239,6 @@
                   Theo dõi tiến độ, nhắc deadline bài tập; phối hợp GV tổ chức
                   chuyên đề và hoạt động “đôi bạn cùng tiến”.
                 </li>
-                <li>
-                  Phân công, tổ chức các nhóm thảo luận, học tập theo chủ đề,
-                  đặc biệt là các môn học khó, nhằm nâng cao kết quả chung của
-                  lớp.
-                </li>
               </ul>
             </article>
 
@@ -211,10 +254,6 @@
                   với C++/Python; viết lời giải có chú thích và chuẩn hóa test.
                 </li>
                 <li>
-                  Tham gia các kỳ thi/đánh giá chọn đội tuyển; hỗ trợ hướng dẫn
-                  các em, review code và xây bộ đề luyện tập nội bộ.
-                </li>
-                <li>
                   Phát triển kỹ năng tư duy logic và giải quyết các bài toán
                   phức tạp thông qua lập trình, hoàn thành các dự án lập trình
                   được giao trong đội tuyển.
@@ -223,11 +262,12 @@
             </article>
           </section>
 
+          <!-- Giải thưởng -->
           <section class="sec">
             <h3>Giải thưởng</h3>
             <ul class="bullets">
               <li>
-                Giải khuyết khích thi Học sinh giỏi cấp tỉnh (bảng B) - Năm học
+                Giải khuyến khích thi Học sinh giỏi cấp tỉnh (bảng B) - Năm học
                 2023
               </li>
               <li>
